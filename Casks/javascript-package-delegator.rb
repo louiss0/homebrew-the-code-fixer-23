@@ -8,7 +8,7 @@ cask "javascript-package-delegator" do
 
   livecheck do
     url :homepage
-    regex(%r{^https://github\.com/louiss0/javascript-package-delegator/releases/download/v?(\d+(?:\.\d+)+)/})
+    regex(%r{^https://github\.com/louiss0/javascript-package-delegator/releases/tag/v?(\d+(?:\.\d+)+)/})
   end
 
   binary "jpd"
