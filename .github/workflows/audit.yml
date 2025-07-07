@@ -26,4 +26,5 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
       - name: Audit
-        run: brew audit --strict louiss0/homebrew-the-code-fixer-23
+        run: |
+          brew audit --strict --online --tap="${{ github.repository }}"
