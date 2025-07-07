@@ -7,8 +7,7 @@ cask "javascript-package-delegator" do
   homepage "https://github.com/louiss0/javascript-package-delegator"
 
   livecheck do
-    url :homepage
-    regex(%r{^https://github\.com/louiss0/javascript-package-delegator/releases/tag/v?(\d+(?:\.\d+)+)/})
+    strategy :github_latest
   end
 
   binary "jpd"
