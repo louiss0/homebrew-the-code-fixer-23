@@ -2,19 +2,19 @@ name: Audit
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   audit:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Homebrew
-      id: set-up-homebrew
-      uses: Homebrew/actions/setup-homebrew@v2
+      - uses: actions/checkout@v3
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
 
-    - name: Audit
-      run: brew audit --strict louiss0/the-code-fixer-23
+      - name: Audit
+        run: brew audit --strict louiss0/the-code-fixer-23
