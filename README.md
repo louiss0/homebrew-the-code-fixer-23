@@ -52,7 +52,12 @@ brew install --cask example-app
 
 Note: Casks are different from formulae. Formulae install command-line tools, while casks install macOS applications and other GUI-based software.
 
-## Available Formulae
+## Available Formulae and Casks
+
+This tap provides both command-line tools (formulae) and macOS applications (casks).
+
+*   `javascript-package-delegator-formula`: Installs the `javascript-package-delegator` command-line tool.
+*   `javascript-package-delegator`: Installs the `javascript-package-delegator` application as a cask.
 
 *(This section will list the available formulae with brief descriptions.  This will need to be updated manually as you add new CLIs.)*
 

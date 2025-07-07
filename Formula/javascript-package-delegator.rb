@@ -1,4 +1,4 @@
-class JavascriptPackageDelegator < Formula
+class JavascriptPackageDelegatorFormula < Formula
   desc "Tool to delegate package installation to JavaScript package managers"
   homepage "https://github.com/louiss0/javascript-package-delegator/tree/main?tab=readme-ov-file#javascript-package-delegator-a-universal-javascript-package-manager-cli"
   version "1.0.0"
