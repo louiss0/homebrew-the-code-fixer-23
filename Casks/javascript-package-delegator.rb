@@ -4,10 +4,11 @@ cask "javascript-package-delegator" do
 
   name "Javascript Package Delegator"
   desc "Tool to delegate package installation to JavaScript package managers"
-  homepage "https://github.com/louiss0/javascript-package-delegator/tree/main?tab=readme-ov-file#javascript-package-delegator-a-universal-javascript-package-manager-cli"
+  homepage "https://github.com/louiss0/javascript-package-delegator"
 
   livecheck do
-    skip "Auto-generated on release."
+    url :homepage
+    regex(%r{^https://github\.com/louiss0/javascript-package-delegator/releases/download/v?(\d+(?:\.\d+)+)/})
   end
 
   binary "jpd"
