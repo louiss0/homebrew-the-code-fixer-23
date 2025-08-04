@@ -30,7 +30,7 @@ cask "javascript-package-delegator" do
     on_arm do
       url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.0.1/javascript-package-delegator_1.0.1_linux_arm64.tar.gz"
       sha256 "9e05c9817e665a06a09e5bf1d3842580908e0d76293af2b2d277392c60c6a723"
-    endM
+    end
   end
 
   # No zap stanza required
