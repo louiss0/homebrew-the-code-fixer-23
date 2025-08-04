@@ -5,7 +5,7 @@ cask "javascript-package-delegator" do
   version "1.0.1"
 
   livecheck do
-    skip "Auto-generated on release."
+    strategy :github_latest
   end
 
   binary "jpd"
