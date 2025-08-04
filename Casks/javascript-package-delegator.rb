@@ -3,6 +3,7 @@ cask "javascript-package-delegator" do
   desc "A tool to delegate package installation to JavaScript package managers."
   homepage "https://github.com/louiss0/javascript-package-delegator"
   version "1.0.1"
+  sha256 :nocheck
 
   livecheck do
     strategy :github_latest
