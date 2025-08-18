@@ -2,7 +2,7 @@
 cask "javascript-package-delegator" do
   desc "A tool to delegate package installation to JavaScript package managers."
   homepage "https://github.com/louiss0/javascript-package-delegator"
-  version "1.0.3"
+  version "1.1.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "javascript-package-delegator" do
 
   on_macos do
     on_intel do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.0.3/javascript-package-delegator_1.0.3_darwin_amd64.tar.gz"
-      sha256 "182a9a40f4ac92ea32be11c6b0e45c183fddb1d400658572dbe0fab42ff5d685"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.1.0/javascript-package-delegator_1.1.0_darwin_amd64.tar.gz"
+      sha256 "3e7f4aad1327229fb28e1e0e985dc2c7b091298d82b9223a518723119bf1c5e4"
     end
     on_arm do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.0.3/javascript-package-delegator_1.0.3_darwin_arm64.tar.gz"
-      sha256 "a744311ac21c7496afacebd94cdba7a4c6651e4458546c7af44d5a1b0b3b4ac5"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.1.0/javascript-package-delegator_1.1.0_darwin_arm64.tar.gz"
+      sha256 "72937644dc65d742aa50757d3be99846d0ac03c1d3245d17cb981e1a1c0a70af"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.0.3/javascript-package-delegator_1.0.3_linux_amd64.tar.gz"
-      sha256 "cef8eb64d6dbf1ea1dd6aed6ef2c47f26ed1f8b3ba9d322b2901ee7e114d82bf"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.1.0/javascript-package-delegator_1.1.0_linux_amd64.tar.gz"
+      sha256 "da21a0a202909e1b0589ad28d5d8d00aac19bcecc8d48b6e59a0812ae20cb1ed"
     end
     on_arm do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.0.3/javascript-package-delegator_1.0.3_linux_arm64.tar.gz"
-      sha256 "e718d6285f68421bd8a05070c32b6ab42182ee1038114a196699176df7f7b849"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.1.0/javascript-package-delegator_1.1.0_linux_arm64.tar.gz"
+      sha256 "a19dbd76f705dbea51d792cc528374e4265249e4b8fb970830778f75dca5aa61"
     end
   end
 
