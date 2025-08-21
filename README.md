@@ -2,39 +2,6 @@
 
 This Homebrew tap hosts command-line tools (CLIs) developed by Louiss0 for various purposes.  You can use these tools to automate tasks, improve your workflow, or enhance your development environment.
 
-## How do I install these formulae?
-
-First, tap this repository:
-
-```
-brew tap louiss0/the-code-fixer-23
-```
-
-Then, install the desired formula:
-
-```
-brew install louiss0/the-code-fixer-23/<formula>
-```
-
-For example, to install a CLI named `example-cli`, you would run:
-
-```
-brew install louiss0/the-code-fixer-23/example-cli
-```
-
-Alternatively, you can install the tap and then install the formula:
-
-```
-brew tap louiss0/the-code-fixer-23
-brew install <formula>
-```
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "louiss0/the-code-fixer-23"
-brew "<formula>"
-```
 
 ## Casks
 
