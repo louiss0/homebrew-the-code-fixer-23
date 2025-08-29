@@ -2,7 +2,7 @@
 cask "javascript-package-delegator" do
   desc "A CLI for executing JavaScript package manager commands based on lock files. Supports npm, yarn, pnpm, bun, and deno."
   homepage "https://github.com/louiss0/javascript-package-delegator"
-  version "1.2.2"
+  version "2.0.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "javascript-package-delegator" do
 
   on_macos do
     on_intel do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.2.2/javascript-package-delegator_1.2.2_darwin_amd64.tar.gz"
-      sha256 "e9eff2b480d5f2b97c6992651fd8f0eb10a59e66fd08a70570a3f200063ad97a"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v2.0.0/javascript-package-delegator_2.0.0_darwin_amd64.tar.gz"
+      sha256 "802e13059b2a0dc2f41f1e02afa0ddb79b94a003d2466f83e4cec7d0c247f01f"
     end
     on_arm do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.2.2/javascript-package-delegator_1.2.2_darwin_arm64.tar.gz"
-      sha256 "033d421d576394e97cc8384199840af25c9f131b39a06eea6457e662d2000abf"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v2.0.0/javascript-package-delegator_2.0.0_darwin_arm64.tar.gz"
+      sha256 "7c46d0916f2647757256e76e1ca6ba6e0faa35d7006af5ef22e4c20ef65a84af"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.2.2/javascript-package-delegator_1.2.2_linux_amd64.tar.gz"
-      sha256 "bdaa36cea5c1dbe8b805039156a94e949b53c6ee3904b429bef760d5e4d26862"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v2.0.0/javascript-package-delegator_2.0.0_linux_amd64.tar.gz"
+      sha256 "1550006a9d09c94b9ed9abf33f8955bc458d4a41b3d12ea35ee4ca949be64619"
     end
     on_arm do
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v1.2.2/javascript-package-delegator_1.2.2_linux_arm64.tar.gz"
-      sha256 "c1935fe95b287457ab96b44c17aa63738f9b8639964515259722eeb4b596ef22"
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v2.0.0/javascript-package-delegator_2.0.0_linux_arm64.tar.gz"
+      sha256 "b702315b3cfb8a85998539069ea1d2be6b42889f2b0849ea42bde245066ef490"
     end
   end
 
