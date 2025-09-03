@@ -5,20 +5,40 @@ This document outlines the requirements for maintaining Homebrew-compatible cask
 ## Key Issues with GoReleaser Casks
 
 ### ❌ Problems with Default GoReleaser Output:
-1. **Linux blocks** (`on_linux`) are invalid - Homebrew casks are macOS-only
-2. **Description violations**: Too long, starts with article, ends with period
-3. **Stanza order**: Must follow Homebrew's specific ordering
-4. **Line length**: Must be ≤118 characters
+1. **Description violations**: Too long, starts with article, ends with period
+2. **Stanza order**: Must follow Homebrew's specific ordering
+3. **Line length**: Must be ≤118 characters
+4. **Architecture handling**: Must use `on_intel`/`on_arm` blocks instead of `Hardware::CPU.arch`
+5. **Hash alignment**: Multi-line hashes must have aligned keys and values
 
 ### ✅ Correct Cask Format:
 
 ```ruby
 cask "your-app-name" do
   version "1.0.0"
-  sha256 arm: "arm64-hash",
-         intel: "amd64-hash"
 
-  url "https://github.com/user/repo/releases/download/v#{version}/app_#{version}_darwin_#{Hardware::CPU.arch}.tar.gz"
+  on_macos do
+    on_intel do
+      sha256 "intel-hash"
+      url "https://github.com/user/repo/releases/download/v#{version}/app_#{version}_darwin_amd64.tar.gz"
+    end
+    on_arm do
+      sha256 "arm64-hash"
+      url "https://github.com/user/repo/releases/download/v#{version}/app_#{version}_darwin_arm64.tar.gz"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      sha256 "linux-intel-hash"
+      url "https://github.com/user/repo/releases/download/v#{version}/app_#{version}_linux_amd64.tar.gz"
+    end
+    on_arm do
+      sha256 "linux-arm64-hash"
+      url "https://github.com/user/repo/releases/download/v#{version}/app_#{version}_linux_arm64.tar.gz"
+    end
+  end
+
   name "Proper Name"
   desc "Short description under 80 chars, no article start, no period"
   homepage "https://github.com/user/repo"
@@ -82,15 +102,23 @@ brews:
 
 When GoReleaser generates invalid casks, apply these fixes:
 
-1. **Remove `on_linux` blocks entirely**
-2. **Combine architecture handling**:
+1. **Fix description** to meet style requirements
+2. **Reorder stanzas** according to Homebrew standards
+3. **Use proper architecture blocks**:
    ```ruby
-   # Instead of separate on_intel/on_arm blocks:
-   sha256 arm: "arm-hash", intel: "intel-hash"
-   url "...#{Hardware::CPU.arch}..."
+   # Use on_intel/on_arm blocks (NOT Hardware::CPU.arch)
+   on_macos do
+     on_intel do
+       sha256 "intel-hash"
+       url "...amd64.tar.gz"
+     end
+     on_arm do
+       sha256 "arm64-hash" 
+       url "...arm64.tar.gz"
+     end
+   end
    ```
-3. **Fix description** to meet style requirements
-4. **Reorder stanzas** according to Homebrew standards
+4. **Keep Linux blocks** if your app supports Linux
 
 ## CI Workflow Notes
 
@@ -111,7 +139,7 @@ Avoided `brew readall` because it's too strict for GoReleaser casks.
 | `shouldn't start with article` | Remove "A", "An", "The" |
 | `shouldn't end with full stop` | Remove trailing period |
 | `Line is too long` | Split long lines, esp. URLs |
-| `on_linux` blocks | Remove entirely (macOS only) |
+| `Hardware::CPU.arch` usage | Use `on_intel`/`on_arm` blocks instead |
 | `Invalid cask: No Cask with this name exists` | Fix tap name or cask discovery |
 
 ## Future Prevention
