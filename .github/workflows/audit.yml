@@ -1,8 +1,8 @@
-name: Audit
+name: Brew Audit
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
     branches: [main]
 
@@ -10,21 +10,44 @@ jobs:
   audit:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@main
-      - name: Cache Homebrew Bundler RubyGems
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ runner.os }}-rubygems-
+      - uses: actions/checkout@v4
 
-      - name: Install Homebrew Bundler RubyGems
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: brew install-bundler-gems
-      - name: Audit
+      - uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ github.token }}
+
+      - name: Homebrew diagnostics
         run: |
-          brew audit --strict --online --tap="${{ github.repository }}"
+          brew --version
+          brew config
+
+      - name: Link current checkout as tap
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          set -euxo pipefail
+          TAP_USER="${GITHUB_REPOSITORY_OWNER}"
+          TAP_REPO="$(basename "${GITHUB_REPOSITORY}")"
+          TAP_SHORT="${TAP_REPO#homebrew-}"
+          BREW_TAPS_DIR="$(brew --repo)/Library/Taps/${TAP_USER}"
+
+          mkdir -p "${BREW_TAPS_DIR}"
+          ln -sfn "$GITHUB_WORKSPACE" "${BREW_TAPS_DIR}/${TAP_REPO}"
+
+          # Tell Homebrew about the tap using canonical name (user/short)
+          brew tap "${TAP_USER}/${TAP_SHORT}" || true
+          brew tap-info "${TAP_USER}/${TAP_SHORT}"
+          brew readall --cask "${TAP_USER}/${TAP_SHORT}"
+
+      - name: Style check
+        run: |
+          brew style --display-cop-names Casks/*.rb
+
+      - name: Audit casks (strict + online)
+        run: |
+          set -euxo pipefail
+          TAP_USER="${{ github.repository_owner }}"
+          TAP_REPO="$(basename "${{ github.repository }}")"
+          TAP_SHORT="${TAP_REPO#homebrew-}"
+          brew audit --cask --strict --online --token-conflicts --tap="${TAP_USER}/${TAP_SHORT}"
