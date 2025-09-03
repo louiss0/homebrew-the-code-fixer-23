@@ -38,7 +38,7 @@ jobs:
           # Tell Homebrew about the tap using canonical name (user/short)
           brew tap "${TAP_USER}/${TAP_SHORT}" || true
           brew tap-info "${TAP_USER}/${TAP_SHORT}"
-          brew readall --cask "${TAP_USER}/${TAP_SHORT}"
+          brew readall "${TAP_USER}/${TAP_SHORT}"
 
       - name: Style check
         run: |
