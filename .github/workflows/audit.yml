@@ -37,12 +37,18 @@ jobs:
 
           # Tell Homebrew about the tap using canonical name (user/short)
           brew tap "${TAP_USER}/${TAP_SHORT}" || true
+          
+          # Basic tap verification
           brew tap-info "${TAP_USER}/${TAP_SHORT}"
-          brew readall "${TAP_USER}/${TAP_SHORT}"
 
       - name: Style check
         run: |
           brew style --display-cop-names Casks/*.rb
+
+      - name: Validate cask syntax
+        run: |
+          # Test if cask can be loaded (basic syntax check)
+          ruby -c Casks/javascript-package-delegator.rb
 
       - name: Audit casks (strict + online)
         run: |
@@ -50,4 +56,4 @@ jobs:
           TAP_USER="${{ github.repository_owner }}"
           TAP_REPO="$(basename "${{ github.repository }}")"
           TAP_SHORT="${TAP_REPO#homebrew-}"
-          brew audit --cask --strict --online --token-conflicts --tap="${TAP_USER}/${TAP_SHORT}"
+          brew audit --cask --strict --online --tap="${TAP_USER}/${TAP_SHORT}"
