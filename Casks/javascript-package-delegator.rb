@@ -3,34 +3,35 @@ cask "javascript-package-delegator" do
   name "javascript-package-delegator"
   desc "A CLI for executing JavaScript package manager commands based on lock files. Supports npm, yarn, pnpm, bun, and deno."
   homepage "https://github.com/louiss0/javascript-package-delegator"
-  version "2.0.1"
-
-  on_macos do
-    on_intel do
-      sha256 "bc525f97ef0853b87b900c068340df328c83d269f34ba8f86753442cbc63a6b9"
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_amd64.tar.gz"
-    end
-    on_arm do
-      sha256 "ad187c8c1fb14eb6c590083b81f303ecb05d28f31c25a031897f396a5f753626"
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_arm64.tar.gz"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      sha256 "8f5fb1b6050295ad04d195db627133c4d29affa577fa1f62b6725921db5f0a3e"
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_amd64.tar.gz"
-    end
-    on_arm do
-      sha256 "526e56b4e549443fbd10fd8586fb0208ca5a80f4e2c971ec7150597a903ea66a"
-      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_arm64.tar.gz"
-    end
-  end
+  version "3.0.0"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "jpd"
+
+  on_macos do
+    on_intel do
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_amd64.tar.gz"
+      sha256 "82d820ef886d19aefcbdbb9e4c540c36a18eb1f47b0827ba876b987ad0cbe1af"
+    end
+    on_arm do
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_arm64.tar.gz"
+      sha256 "212bc4b7ae140d38cb85479fff66ed79c86fee7a318c1922fa9e0364746d8699"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_amd64.tar.gz"
+      sha256 "f7460fb58312425c4fac9228fe9d5c26237ffde4850605b2c2778969cc0b2810"
+    end
+    on_arm do
+      url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_arm64.tar.gz"
+      sha256 "e20ef36251ad02f51abfa206b61627f696c204fcefc06223c222e3d313cc32c8"
+    end
+  end
+
   # No zap stanza required
 end
