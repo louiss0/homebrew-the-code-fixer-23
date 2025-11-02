@@ -28,5 +28,7 @@ jobs:
       - name: Audit casks
         run: |
           for cask in Casks/*.rb; do
-            brew audit --cask --strict --online "$cask"
+            token="${cask##*/}"
+            token="${token%.rb}"
+            brew audit --cask --strict --online "$token"
           done
