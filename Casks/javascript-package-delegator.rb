@@ -16,7 +16,7 @@ cask "javascript-package-delegator" do
     arch arm: "arm64", intel: "amd64"
 
     url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_#{arch}.tar.gz"
-    sha256 arm: "212bc4b7ae140d38cb85479fff66ed79c86fee7a318c1922fa9e0364746d8699",
+    sha256 arm:   "212bc4b7ae140d38cb85479fff66ed79c86fee7a318c1922fa9e0364746d8699",
            intel: "82d820ef886d19aefcbdbb9e4c540c36a18eb1f47b0827ba876b987ad0cbe1af"
   end
 
@@ -24,7 +24,7 @@ cask "javascript-package-delegator" do
     arch arm: "arm64", intel: "amd64"
 
     url "https://github.com/louiss0/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_#{arch}.tar.gz"
-    sha256 arm: "e20ef36251ad02f51abfa206b61627f696c204fcefc06223c222e3d313cc32c8",
+    sha256 arm:   "e20ef36251ad02f51abfa206b61627f696c204fcefc06223c222e3d313cc32c8",
            intel: "f7460fb58312425c4fac9228fe9d5c26237ffde4850605b2c2778969cc0b2810"
   end
 
