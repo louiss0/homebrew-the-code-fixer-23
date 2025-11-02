@@ -20,7 +20,10 @@ jobs:
         run: |
           brew style --display-cop-names Casks/*.rb
 
-      - name: Validate cask syntax
+      - name: Audit casks
         run: |
-          # Test if cask can be loaded (basic syntax check)
-          ruby -c Casks/javascript-package-delegator.rb
+          for cask in Casks/*.rb; do
+            token="${cask##*/}"
+            token="${token%.rb}"
+            brew audit --cask --strict --online "$token"
+          done
