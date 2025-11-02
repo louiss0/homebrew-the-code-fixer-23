@@ -24,3 +24,9 @@ jobs:
         run: |
           # Test if cask can be loaded (basic syntax check)
           ruby -c Casks/javascript-package-delegator.rb
+
+      - name: Audit casks
+        run: |
+          for cask in Casks/*.rb; do
+            brew audit --cask --strict --online "$cask"
+          done
