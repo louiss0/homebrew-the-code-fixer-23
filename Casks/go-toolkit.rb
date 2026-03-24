@@ -14,22 +14,22 @@ cask "go-toolkit" do
   on_macos do
     on_intel do
       url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_amd64.tar.gz"
-      sha256 "e23483ce81c57b5cc5246c933859cba9943a5cd408811fa16fceec6baa3ca04c"
+      sha256 "70d2ddd463eff629caeed95dea09dbc123d87ef6ee1bfbc6e3e0c4778fa9e6f6"
     end
     on_arm do
       url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_arm64.tar.gz"
-      sha256 "ca81cac526ffe997239d144bbc765e3eadb4eec67e69099eb459b83ab8c0f326"
+      sha256 "dae4892ed07b47f14cc47e5d53fcaa142eba0a15423559fc6fc66beae82746e8"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_amd64.tar.gz"
-      sha256 "267aa17dde21f306cef39ffdf8a8e131c4a3670df3b89cdee25121ba5c276318"
+      sha256 "9052f77cec4808bc87e1a6a2b281570eecf05a9e698af907792644f3a4d6938d"
     end
     on_arm do
       url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_arm64.tar.gz"
-      sha256 "749ebdec3ed93edca502ebee440b9d60fe8567a8452bc0012904e11ef75b539b"
+      sha256 "6960d6aecc579fcfbe3805dcf613e06c7c4c5fd6722597dbda6c89f804849824"
     end
   end
 
