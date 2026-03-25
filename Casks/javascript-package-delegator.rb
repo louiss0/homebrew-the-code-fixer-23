@@ -3,7 +3,7 @@ cask "javascript-package-delegator" do
   name "javascript-package-delegator"
   desc "A CLI for executing JavaScript package manager commands based on lock files. Supports npm, yarn, pnpm, bun, and deno."
   homepage "https://github.com/Sheltons-CLI-Projects/javascript-package-delegator"
-  version "3.0.1-alpha"
+  version "3.0.2-alpha"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "javascript-package-delegator" do
   on_macos do
     on_intel do
       url "https://github.com/Sheltons-CLI-Projects/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_amd64.tar.gz"
-      sha256 "1804fbf6800b14dbbb7d49ac0697c19f48cb97f1682dfc3fffed5f9029691011"
+      sha256 "ab269f746583c44d30fb91ac5fa1e834effbc2e92d9dcde44361110d57f45aa4"
     end
     on_arm do
       url "https://github.com/Sheltons-CLI-Projects/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_darwin_arm64.tar.gz"
-      sha256 "5d65db5b2ca44c0afd769fcb92b058b53ef05a77f82bf4ec2887118da12128ce"
+      sha256 "de28ec87c8e343be27f88f4262d6a61e68d0bcca759b89a549897ab2cbcf8e09"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Sheltons-CLI-Projects/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_amd64.tar.gz"
-      sha256 "9c574c708446bf95f0e142eec35d14eccd844be921d9034fcf707bd08cb036e2"
+      sha256 "cfed975ec8b73ce444d64dc4d148c3902cfb69bf630fba40ed5cff11dfcd3b6c"
     end
     on_arm do
       url "https://github.com/Sheltons-CLI-Projects/javascript-package-delegator/releases/download/v#{version}/javascript-package-delegator_#{version}_linux_arm64.tar.gz"
-      sha256 "7691068f3c4ccb0a7e5f7e526301394b9b7c9dbe8f1dff05163ba664dffa93af"
+      sha256 "e25a67fe5bb4bcef7b62800553fc63a095e4fe9da545e1b88a8b65430a165518"
     end
   end
 
