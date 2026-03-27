@@ -2,8 +2,8 @@
 cask "go-toolkit" do
   name "go-toolkit"
   desc "CLI for Go scaffolding and dependency workflows."
-  homepage "https://github.com/Sheltons-CLI-Projects/go-toolkit"
-  version "0.11.5-alpha"
+  homepage "https://github.com/louiss0/go-toolkit"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,23 @@ cask "go-toolkit" do
 
   on_macos do
     on_intel do
-      url "https://github.com/Sheltons-CLI-Projects/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_amd64.tar.gz"
-      sha256 "41249bafa9daea465bcfff77d63d29fefb18d42afacfce91f91004980738f92b"
+      url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_amd64.tar.gz"
+      sha256 "bd0289dc796e926b261686397e6c99840c60278dd1fbfcea7dbf597e883f6918"
     end
     on_arm do
-      url "https://github.com/Sheltons-CLI-Projects/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_arm64.tar.gz"
-      sha256 "fa8a701454ca83e99c52d1acc81bb41630ee806ff8ffc071aaeaecf1191ae1ad"
+      url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_darwin_arm64.tar.gz"
+      sha256 "eb43ad8512128cae88cdf56431274bc9295eb19f31689850c7bd07c5bd65d8ee"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Sheltons-CLI-Projects/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_amd64.tar.gz"
-      sha256 "5c15fb2e007795abf335afa354ead590a1a4b0d7dd48165c273833a5e6f5d534"
+      url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_amd64.tar.gz"
+      sha256 "7892daea9ec606d5fc8cd09a88b934baa9a4161ae256010928c0549a95cfd3ea"
     end
     on_arm do
-      url "https://github.com/Sheltons-CLI-Projects/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_arm64.tar.gz"
-      sha256 "14e80791d281fcd6f1b90e69a934785e5df217e87ef3630e53c193652f4dc536"
+      url "https://github.com/louiss0/go-toolkit/releases/download/v#{version}/go-toolkit_#{version}_linux_arm64.tar.gz"
+      sha256 "c6708731e1b433913ec33f10b17c730f6fa0154ce6e926233fc03231f855495a"
     end
   end
 
